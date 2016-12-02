@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Libs -->
+        <!-- This is where we include things that were just copied to the /dist folder by the 'frontend' task -->
+        <script src="lib/babel-polyfill/dist/polyfill.min.js"></script>
+        <script src="lib/systemjs/dist/system.js"></script>
+        <script src="lib/paper/dist/paper-core.min.js"></script>
+        <script src="lib/justmath/JustMath.min.js"></script>
+
+        <script src="lib/jquery/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="lib/foundation-sites/dist/foundation.min.css">
+        <script src="lib/foundation-sites/dist/foundation.min.js"></script>
+        <!-- End Libs -->
+
+    </head>
+    <body>
+
+        <!-- A basic foundation top bar -->
+        <div class="top-bar">
+            <div class="top-bar-left">
+                <ul class="dropdown menu" data-dropdown-menu>
+                    <li class="menu-text">Name</li>
+                </ul>
+            </div>
+            <div class="top-bar-right">
+                <ul class="menu">
+                    <li><a href="https://github.com/name/repo">View on Github</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <canvas id="canvas" style="display: block; width: 100%; height: 100%"></canvas>
+
+        <!-- Tell SystemJS the base url for scripts is the /dist/js folder, and load the main entry point app.js -->
+        <script>
+            System.config({"baseURL": "js"});
+            System.import("app.js");
+        </script>
+
+    </body>
+</html>
