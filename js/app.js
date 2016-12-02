@@ -43,6 +43,13 @@ System.register(['./coordinatesystem.js', './robot.js'], function (_export, _con
                         r.move("R");
                     }
                 };
+
+                var hash = window.location.hash ? window.location.hash.substring(1) : null;
+                if (hash != null) {
+                    hash.split("").map(function (x) {
+                        return r.move(x);
+                    });
+                }
             });
         }
     };
