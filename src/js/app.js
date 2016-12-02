@@ -31,4 +31,9 @@ $(document).ready(() => {
         }
     };
 
+    var hash = window.location.hash ? window.location.hash.substring(1) : null;
+	if (hash != null) {
+        hash.split("").map(x => r.move(x));
+	}
+
 });
