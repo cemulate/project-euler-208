@@ -4,10 +4,12 @@ function pt(v) {
     return new paper.Point(v.x, v.y);
 }
 
-function drawDot(v) {
+function drawDot(v,color) {
     let c = new paper.Shape.Circle(pt(v), 0.2);
-    c.strokeWidth = 0.05;
+    c.strokeWidth = 0.04;
     c.strokeColor = "black";
+    c.opacity = 0.7;
+    if (color) c.fillColor = color;
     return c;
 }
 
@@ -37,6 +39,8 @@ export class Robot {
 
         this.p = new Vec2(0,0);
         this.f = new Vec2(0,1);
+
+        this.canvas.addChild(drawDot(this.p, "skyblue"));
 
         this.drawCurrent();
     }
